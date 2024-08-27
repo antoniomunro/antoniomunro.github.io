@@ -1,0 +1,63 @@
+.top-nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 1vh;
+    z-index: 1000;
+  }
+  
+  .top-nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+  }
+  
+  .top-nav a {
+    display: inline-block;
+  }
+  
+  .top-nav a:hover {
+    opacity: 0.8;
+  }
+
+body.dark-mode button[name="dark-light"]:hover {
+    color: #eafaad;
+    transform: scale(1.05);
+}
+
+body.light-mode button[name="dark-light"]:hover {
+    color: #a7a2ff;
+    transform: scale(1.05);
+}
+
+body.dark-mode button[class="btn-primary"]:hover {
+  transform: scale(1.05);
+}
+
+body.light-mode button[class="btn-primary"]:hover {
+    transform: scale(1.05);
+  }
+
+body.light-mode .page {
+  border: rgba(0, 0, 0, 0.866) solid 2px;
+}
+
+/* Base button styles */
+body.light-mode button[class="btn-primary"]{
+  background-color: transparent;
+  color: #000000; /* Default text color */
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+body.dark-mode button[class="btn-primary"]{
+  background-color: transparent;
+  color: #ffffff; /* Default text color */
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}

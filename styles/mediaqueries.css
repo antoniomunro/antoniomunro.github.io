@@ -1,0 +1,33 @@
+/* Base styles */
+.main-header {
+  font-size: clamp(32px, 6vw, 18px);
+}
+
+.sub-header {
+  font-size: clamp(9px, 2vw, 20px);
+}
+
+.btn-primary {
+  font-size: clamp(9px, 2vw, 20px);
+  }
+
+.center-text {
+  font-size: clamp(9px, 2vw, 20px);
+  }
+
+.bottom-center-text {
+  font-size: clamp(9px, 2vw, 20px);
+  }
+
+@media only screen and (max-width: 650px) {
+.main-header, .sub-header{
+  display: grid;
+  margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 150px) {
+  body, p {
+      display: none;
+  }
+}
