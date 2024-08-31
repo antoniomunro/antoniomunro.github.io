@@ -19,15 +19,35 @@
   font-size: clamp(9px, 2vw, 20px);
   }
 
-@media only screen and (max-width: 650px) {
-.main-header, .sub-header{
-  display: grid;
-  margin-top: 20px;
+
+@media only screen and (max-width: 150px) {
+  p {
+      display: none;
   }
 }
 
-@media only screen and (max-width: 150px) {
-  body, p {
-      display: none;
+@media only screen and (max-width: 650px) {
+  .main-header, .sub-header{
+    display: grid;
+    margin-top: 20px;
+    }
   }
+
+@media screen and (min-width: 1400px) {
+  .main-header, .sub-header{
+    display: grid;
+    margin-top: 40px;
+    }
+}
+@media screen and (min-width: 1600px) {
+  .main-header, .sub-header{
+    display: grid;
+    margin-top: 60px;
+    }
+}
+@media screen and (min-width: 1900px) {
+  .main-header, .sub-header{
+    display: grid;
+    margin-top: 80px;
+    }
 }
