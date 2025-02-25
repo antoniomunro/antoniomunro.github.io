@@ -5,80 +5,24 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-@media (max-width: 768px) {
-  .bottom-right-text {
-    right: 5px;
-    bottom: 5px;
-  }
-
-  .faqs-list li {
-    max-width: 100%;
-  }
-
-  .main-container {
-    padding-top: 60px;
-  }
-
-  .nameheader {
-    top: 5px;
-    left: 5px;
-  }
+html, body {
+  height: 100dvh;
+  width: 100dvw;
+  min-height: 100dvh;
+  min-width: 100dvw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-@keyframes backgroundMove {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 50% 50%; }
-  100% { background-position: 0% 0%; }
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-body.dark-mode {
-  --gradient-color1: #252525;
-  --gradient-color2: #101010;
-  --gradient-color3: #090909;
-  --gradient-color4: #000000;
-  background: linear-gradient(-45deg, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
-  background-size: 200% 200%;
-  color: #eee;
-}
-
-body.dark-mode a {
-  color: #ffffff;
-  font-style: italic;
-}
-
-.dark-mode .nav-links {
-  border: white 1px solid;
-}
-
-body.light-mode {
-  --gradient-color1: #e4e4e4;
-  --gradient-color2: #e5e5e5;
-  --gradient-color3: #dbdbdb;
-  --gradient-color4: #ffffff;
-  background: linear-gradient(-45deg, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
-  background-size: 200% 200%;
-  color: #111;
-}
-
-body.light-mode a {
-  color: #111;
-  font-style: italic;
+body {
+  display: flex;
+  margin: 0;
+  height: 100vh;
 }
 
 body.light-mode .page {
-  border: #111 solid 1px;
+  border: #000000 solid 1px;
 }
 
 body.light-mode button[name="dark-light"],
@@ -105,17 +49,30 @@ body {
   z-index: 10;
 }
 
+.bottom-left-text {
+  padding: 0%;
+  margin: 0%;
+  position: absolute;
+  left: 1vw;
+  bottom: 1vh;
+  z-index: 100;
+  display: inline-block;
+  white-space: nowrap;
+  font-style: italic;
+  font-size: clamp(1rem, 1.0vw, 1rem);
+}
+
 .bottom-right-text {
   padding: 0%;
   margin: 0%;
   position: absolute;
   right: 1vw;
-  bottom: 0;
+  bottom: 1vh;
   z-index: 100;
   display: inline-block;
   white-space: nowrap;
   font-style: italic;
-  font-size: clamp(0.4rem, 1.0vw, 0.8rem);
+  font-size: clamp(0.8rem, 1.0vw, 0.8rem);
 }
 
 button.btn-primary {
@@ -135,30 +92,36 @@ button.btn-primary:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.faqs-list {
+.center-text p{
+  font-size: clamp(1.0rem, 0.5vw, 1.0rem);
+}
+
+.info-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  font-size: 2em;}
+  padding: 1rem;
+  text-align: left;
+}
 
-.faqs-list li {
+.info-list li {
   margin-bottom: 1vw;
   max-width: 30vw;
   text-align: left;
 }
 
-.faqs-list li b {
+.info-list li b {
   font-size: 1em;
   display: block;
   text-align: left;
 }
 
-.faqs-list li b::after {
+.info-list li b::after {
   content: "";
   display: block;
 }
@@ -166,7 +129,8 @@ button.btn-primary:hover {
 .image-button {
   width: 50px;
   height: 50px;
-  margin: 20px;
+  margin: 15px;
+  padding: 15px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -182,6 +146,14 @@ button.btn-primary:hover {
 
 .left-text {
   text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 2vw;
+}
+
+.left-text p{
+  font-size: clamp(1.0rem, 0.5vw, 1.0rem);
+
 }
 
 .light-mode .nav-links {
@@ -192,13 +164,35 @@ button.btn-primary:hover {
   padding-top: 40vh;
 }
 
-.main-header,
-.sub-header {
-  text-align: left;
-  margin: 0;
+.contact-list{
+  position: absolute;
+  text-decoration: none;
   padding: 0;
+  margin: 0;
+  padding: 2rem;
+  text-align: right;
+  top: -15vh;
+}
+
+.right-text {
+  text-align: right;
+  position: absolute;
+  margin: auto;
+  padding: 0%;
+  right: 18rem;
+  top: 60vh;
+}
+
+.right-text p{
+  text-align: right;
+  font-size: clamp(1.0rem, 0.5vw, 1.0rem);
+
+}
+
+
+.sub-header {
+  font-weight: bold;
   font-style: italic;
-  font-size: clamp(0.6rem, 1vw, 0.5rem);
 }
 
 .nameheader {
@@ -222,18 +216,10 @@ button.btn-primary:hover {
   flex: 1;
   width: 100%;
   max-width: 100%;
-  border: white solid 1px;
+  border: #a59ffa solid 1px;
   margin: 20px;
   position: relative;
   z-index: 10;
-}
-
-.right-text {
-  text-align: right;
-}
-
-.sub-header {
-  font-weight: bold;
 }
 
 .top-nav {
@@ -241,6 +227,8 @@ button.btn-primary:hover {
   display: flex;
   position: absolute;
   top: 0;
+  padding-left: 3rem;
+  left: 1rem;
   justify-content: center;
 }
 
@@ -279,18 +267,17 @@ button.btn-primary:hover {
 }
 
 #info-buttons-container {
-  position: absolute;
-  top: 50vh;
-  right: 2vw;
-  transform: translateY(-50%);
+  position: fixed;
+  bottom: 6vh;
+  right: 1vw;
   display: flex;
   flex-direction: column;
   z-index: 100;
 }
 
 #info-buttons-container .image-button {
-  width: 5vw;
-  height: 5vh;
+  width: 3vw;
+  height: 3vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -304,12 +291,120 @@ button.btn-primary:hover {
   transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+  #info-buttons-container {
+    bottom: 10vh;
+    right: 1vw;
+  }
+
+  #info-buttons-container .image-button {
+    width: 9vw;
+    height: 8vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #info-buttons-container {
+    bottom: 10vh;
+    right: 3vw;
+  }
+
+  #info-buttons-container .image-button {
+    width: 5vw;
+    height: 5vh;
+  }
+}
+
+.projects-container {
+  width: 300px;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+}
+
+*,
+*::before,
+*::after {
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+}
+
 html, body {
-  height: 100dvh;
-  width: 100dvw;
-  min-height: 100dvh;
-  min-width: 100dvw;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: flex;
 }
+
+body {
+  position: relative;
+  animation: gradientAnimation 15s ease infinite;
+  transition: background 0.3s ease, color 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+body.dark-mode {
+  --gradient-color1: #252525;
+  --gradient-color2: #101010;
+  --gradient-color3: #090909;
+  --gradient-color4: #000000;
+  background: linear-gradient(-45deg, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+  background-size: 200% 200%;
+  color: #eee;
+}
+
+body.light-mode {
+  --gradient-color1: #b3aef7;
+  --gradient-color2: #b5afff;
+  --gradient-color3: #9c95ff;
+  --gradient-color4: #a59ffa;
+  background: linear-gradient(-45deg, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+  background-size: 200% 200%;
+  color: #111;
+}
+
+body.dark-mode a,
+body.light-mode a {
+  font-style: italic;
+  color: #111;
+
+}
+
+body.dark-mode a {
+  color: #ffffff;
+}
+
+
+button.btn-primary,
+button[name="dark-light"] {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button.btn-primary:hover,
+button[name="dark-light"]:hover {
+  transform: scale(1.05);
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 50% 50%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }

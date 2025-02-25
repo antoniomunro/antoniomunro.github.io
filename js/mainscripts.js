@@ -1,17 +1,17 @@
+// Store the mapping of button IDs to their original texts
 const navButtonTexts = {
-    'btnHome': 'Home',
     'btnProjects': 'Projects',
     'btnInfo': 'Info',
     'btnContact': 'Contact'
 };
 
-let lastClickedNavButtonId = 'btnHome';
+let lastClickedNavButtonId = 'btnProjects';
 
 document.addEventListener('DOMContentLoaded', function() {
-    const homeButton = document.getElementById('btnHome');
-    if (homeButton) {
-        homeButton.textContent = '•';
-        homeButton.classList.add('dot');
+    const projectButton = document.getElementById('btnProjects');
+    if (projectButton) {
+        projectButton.textContent = '•';
+        projectButton.classList.add('dot');
     }
 });
 
@@ -21,7 +21,6 @@ function changeContent(section) {
     lastClickedButton = section;
 
     const sectionToButtonId = {
-        'home': 'btnHome',
         'projects': 'btnProjects',
         'info': 'btnInfo',
         'contact': 'btnContact'
@@ -50,10 +49,7 @@ function changeContent(section) {
         buttonsContainer.innerHTML = '';
     }
 
-    switch(section) {
-        case 'home':
-            myHome();
-            break;
+    switch (section) {
         case 'projects':
             myProjects();
             break;
@@ -64,62 +60,40 @@ function changeContent(section) {
             myContact();
             break;
         default:
-            myHome();
+            myProjects();
     }
 }
 
-function myHome() {
-    var centerText = document.querySelector('.center-text');
-
-    centerText.innerHTML = `
-        <p>
-            Born in Wellington New Zealand, <br>
-            I believe in merging logic with creativity to <br>
-            develop impactful digital solutions.
-        </p>
-    `;
-}
-
 function myInfo() {
+
+    var leftText = document.querySelector('.left-text');
+    leftText.innerHTML = `
+    
+
+    `;
+
     var centerText = document.querySelector('.center-text');
+    centerText.innerHTML=`
+    
+
+    `;
+    
     var body = document.getElementById("body");
     var currentClass = body.className;
-
     var listContent = `
-        <h1>FAQs:</h1>
-        <ul class="faqs-list">
-            <li>
-                <b><i>How did you make this site?</b></i><br>
-                It was built using vanilla HTML, CSS and JavaScript for functionality.<br>
-                I decided to build this SPA with no framework to challenge myself and<br>
-                learn more about backend development.<br>
-                Additionally, this portfolio is hosted freely using <a href="https://pages.github.com/">Git Hub Pages.</a><br>
-            </li>
-            <li>
-                <b><i>How did you make the background animation?</b></i><br>
-                This was made using the <a href="https://threejs.org/">Three.js library </a>
-                and <a href="https://greensock.com/">GSAP.</a>.<br>
-                If you would like to learn more about Front End design and web<br>
-                animations, I recommend checking out the resources below:
-                </li>
-                <li>
-                <a href="https://threejs.org/manual/#en/fundamentals">Three JS Fundamentals</a><br>
-                <a href="https://codepen.io/trending">Code Pen Trending</a><br>
-                <a href="https://greensock.com/get-started/">GSAP: Get Started</a>
-            </li>
-        </ul>
-    `;
+        <ul class="info-list">
+        <p>This portfolio was created and is<br>
+        hosted freely using <a href="https://pages.github.com/" target="_blank">Git Hub Pages.</p></a>
+        </ul>`;
 
-    centerText.innerHTML = listContent;
+    leftText.innerHTML = listContent;
 
     var buttonsContainer = document.getElementById('info-buttons-container');
-
     var buttonContent = `
         <button class="image-button" id="githubButton" style="background-image: url('./images/github-mark${currentClass === "dark-mode" ? "-white" : ""}.svg');"></button>
+        <button class="image-button" id="vardevsButton" style="background-image: url('./images/vardevs-mark${currentClass === "dark-mode" ? "" : ""}.png');"></button>
         <button class="image-button" id="linkedInButton" style="background-image: url('./images/linkedin-mark${currentClass === "dark-mode" ? "-white" : ""}.svg');"></button>
-        <button class="image-button" id="leetCodeButton" style="background-image: url('./images/leetcode-mark${currentClass === "dark-mode" ? "-white" : ""}.svg');"></button>
     `;
-
     buttonsContainer.innerHTML = buttonContent;
 
     document.getElementById('githubButton').onclick = function() {
@@ -130,24 +104,61 @@ function myInfo() {
         window.open('https://www.linkedin.com/in/antoniomunro/', '_blank');
     };
 
-    document.getElementById('leetCodeButton').onclick = function() {
-        window.open('https://leetcode.com/u/antonio_munro/', '_blank');
+    document.getElementById('vardevsButton').onclick = function() {
+        window.open('https://vardevs.com/', '_blank');
     };
+
+    var rightText = document.querySelector('.right-text');
+    rightText.innerHTML = ``;
 }
 
 function myProjects() {
+
+    var leftText = document.querySelector('.left-text');
+    leftText.innerHTML = `
+    
+    `;
+
     var centerText = document.querySelector('.center-text');
-    centerText.innerHTML = `<p>You can find out more on what<br>I'm currently working on in my GitHub repo.</p>`;
+    centerText.innerHTML = `
+    
+                    <i>
+                        <p>
+                            My <a href="https://www.github.com/antoniomunro" target="_blank">GitHub ⤼</a>
+                        </p>
+                    </i>
+    
+    `;
+
+    var rightText = document.querySelector('.right-text');
+    rightText.innerHTML = `
+
+    `;
 }
 
 function myContact() {
+
+    var leftText = document.querySelector('.left-text');
+    leftText.innerHTML = `
+        `;
+
     var centerText = document.querySelector('.center-text');
     centerText.innerHTML = `
-        <p>Want to know more?</p>
-        <a href="mailto:antoniomunro@protonmail.com" style="text-decoration: none;">
-            <p><i>Send me a message.</i></p>
-        </a>
     `;
+
+    var rightText = document.querySelector('.right-text');
+    rightText.innerHTML = `
+                <ul class= "contact-list">
+        <p>
+        Personal Enquiries:<br>
+        <a href="mailto:antoniomunro@protonmail.com" style="text-decoration: none;">
+            <i>antoniomunro@protonmail.com</i><br>
+        <a href="mailto:info@vardevs.com" style="text-decoration: none;">
+            <i>info@vardevs.com </i>
+        </p>
+        </a>
+        </ul>
+        `;
 }
 
 function toggleDarkLight() {
@@ -159,13 +170,26 @@ function toggleDarkLight() {
     if (currentClass === "dark-mode") {
         body.className = "light-mode";
         button.innerHTML = "☾";
-        subHeader.textContent = 'Debugger & Code Breaker';
-        updateTheme('light');
+        subHeader.textContent = 'Developer & Designer';
     } else {
         body.className = "dark-mode";
         button.innerHTML = "𖤓";
         subHeader.textContent = 'Designer & Developer';
-        updateTheme('dark');
+    }
+
+    // Update image button backgrounds dynamically
+    const githubButton = document.getElementById('githubButton');
+    const linkedInButton = document.getElementById('linkedInButton');
+    const vardevsButton = document.getElementById('vardevsButton');
+
+    if (githubButton) {
+        githubButton.style.backgroundImage = `url('./images/github-mark${body.className === "dark-mode" ? "-white" : ""}.svg')`;
+    }
+    if (linkedInButton) {
+        linkedInButton.style.backgroundImage = `url('./images/linkedin-mark${body.className === "dark-mode" ? "-white" : ""}.svg')`;
+    }
+    if (vardevsButton) {
+        vardevsButton.style.backgroundImage = `url('./images/vardevs-mark${body.className === "dark-mode" ? "" : ""}.png')`;
     }
 
     if (lastClickedButton === 'info') {
@@ -180,22 +204,26 @@ function toggleDarkLight() {
     }
 }
 
+
 function updateTime() {
     var now = new Date();
     var options = { 
         timeZone: 'Pacific/Auckland', 
         hour: 'numeric', 
-        minute: 'numeric', 
-        second: 'numeric', 
-        hour12: true 
+        minute: 'numeric',
+        hour12: false 
     };
     var datetime = now.toLocaleString('en-NZ', options);
-    document.getElementById("datetime").innerHTML = datetime;
+    document.getElementById("datetime").innerHTML = datetime + ' (NZ)';
 }
-
 setInterval(updateTime, 1000);
 
+function currentYear() {
+    
+    document.write(new Date().getFullYear())
+}
 function toggleMenu() {
     const navLinks = document.querySelector('.top-nav ul.nav-links');
     navLinks.classList.toggle('show');
 }
+
