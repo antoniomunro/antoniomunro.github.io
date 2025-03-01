@@ -216,7 +216,7 @@ button.btn-primary:hover {
   flex: 1;
   width: 100%;
   max-width: 100%;
-  border: #a59ffa solid 1px;
+  border: #fcfcfc solid 1px;
   margin: 20px;
   position: relative;
   z-index: 10;
@@ -363,10 +363,10 @@ body.dark-mode {
 }
 
 body.light-mode {
-  --gradient-color1: #b3aef7;
-  --gradient-color2: #b5afff;
-  --gradient-color3: #9c95ff;
-  --gradient-color4: #a59ffa;
+  --gradient-color1: #fcfcfc;
+  --gradient-color2: #f3f3f3fa;
+  --gradient-color3: #fffdef;
+  --gradient-color4: #ececec;
   background: linear-gradient(-45deg, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
   background-size: 200% 200%;
   color: #111;
