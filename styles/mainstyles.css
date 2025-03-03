@@ -157,7 +157,7 @@ button.btn-primary:hover {
 }
 
 .light-mode .nav-links {
-  border: #111 solid 1px;
+  /* border: #111 solid 1px; */
 }
 
 .main-container {
